@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-      
+        <file>1</file>
     </qresource>
 </RCC>

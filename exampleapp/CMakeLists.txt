@@ -22,5 +22,7 @@ add_executable(QmlCoolStuffExampleApp
 
 target_compile_definitions(QmlCoolStuffExampleApp
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+
 target_link_libraries(QmlCoolStuffExampleApp
-  PRIVATE Qt5::Core Qt5::Quick)
+  QmlCoolStuff
+  Qt5::Core Qt5::Quick)
