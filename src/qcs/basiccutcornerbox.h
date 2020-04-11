@@ -26,6 +26,8 @@ public:
    */
   void paint(QPainter* painter) override;
 
+  Q_INVOKABLE bool contains(const QPointF& p) const override;
+
 protected:
   /**
    * @brief 实时计算边框路径
@@ -33,6 +35,17 @@ protected:
    * @return
    */
   QPainterPath cutCornerPath(qreal offset = 0) const;
+
+  /**
+   * @brief updateStrokes 发起边框部分画面更新
+   * @param old_strokeWidth 边框部分变更前内容
+   * @param new_strokeWidth 边框部分变更后内容
+   */
+  Q_SLOT void updateStrokes(
+    qreal old_strokeWidth, qreal new_strokeWidth);
+
+  /** 只更新左上角 */
+  Q_SLOT void updateTLCorner(qreal old_cutSize, qreal new_cutSize);
 };
 
 COOL_NS_END

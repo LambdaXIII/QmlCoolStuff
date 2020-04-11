@@ -1,5 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>1</file>
+        <file>Cool/Components/CutCornerBox.qml</file>
+        <file>Cool/Components/qmldir</file>
+        <file>Cool/Controls/CoolButton.qml</file>
+        <file>Cool/Controls/qmldir</file>
+        <file>Cool/Controls/CoolWindow.qml</file>
+        <file>Cool/Components/WindowCloseButton.qml</file>
+        <file>Cool/Styles/CoolStyle.qml</file>
+        <file>Cool/Styles/qmldir</file>
+        <file>Cool/Components/DragMoveArea.qml</file>
     </qresource>
 </RCC>

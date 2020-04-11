@@ -2,6 +2,7 @@
 #define COOL_REGISTER_CLASSES_H
 
 #include "basiccutcornerbox.h"
+#include "basicwindowclosebutton.h"
 
 #include <QQmlEngine>
 
@@ -10,6 +11,8 @@ void cool_register_classes() {
 
   qmlRegisterType<QmlCool::BasicCutCornerBox>(
     COOL_ERI, "BasicCutCornerBox");
+  qmlRegisterType<QmlCool::BasicWindowCloseButton>(
+    COOL_ERI, "BasicWindowCloseButton");
 
 #undef COOL_ERI
 }

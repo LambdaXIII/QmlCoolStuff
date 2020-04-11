@@ -1,0 +1,2 @@
+module Cool.Styles
+singleton CoolStyle 1.0 CoolStyle.qml

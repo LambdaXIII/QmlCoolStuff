@@ -1,0 +1,4 @@
+module Cool.Controls
+
+CoolButton 1.0 CoolButton.qml
+CoolWindow 1.0 CoolWindow.qml
