@@ -20,12 +20,11 @@ CoolWindow {
     cutSize: 80
   }
   */
-  CoolButton {
+  CoolTextButton {
     width: 200
     height: 50
-
-    text: "Hello World!"
     anchors.centerIn: parent
-    onClicked: Qt.quit()
+    text: qsTr("普通文本按钮")
+    checkable: true
   }
 }

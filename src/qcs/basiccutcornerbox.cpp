@@ -11,7 +11,9 @@ BasicCutCornerBox::BasicCutCornerBox(QQuickItem* p)
   , m_strokeWidth(4)
   , m_cutSize(10)
   , m_backColor(Qt::black)
-  , m_strokeColor(Qt::red) {
+  , m_strokeColor(Qt::red)
+  , m_hasBack(true)
+  , m_hasStroke(true) {
   connect(this, &BasicCutCornerBox::strokeWidthInternalChanged, this,
     &BasicCutCornerBox::updateStrokes);
   connect(this, &BasicCutCornerBox::cutSizeInternalChanged, this,
@@ -20,17 +22,23 @@ BasicCutCornerBox::BasicCutCornerBox(QQuickItem* p)
     this, &BasicCutCornerBox::backColorChanged, [&] { update(); });
   connect(
     this, &BasicCutCornerBox::strokeColorChanged, [&] { update(); });
+  connect(this, &BasicCutCornerBox::hasBackChanged, [&] { update(); });
+  connect(this, &BasicCutCornerBox::hasStrokeChanged,
+    [&] { updateStrokes(m_strokeWidth, m_strokeWidth); });
 }
 
 void BasicCutCornerBox::paint(QPainter* painter) {
   auto core_path = cutCornerPath(m_strokeWidth);
 
   //画背景
-  painter->fillPath(core_path, QBrush(m_backColor));
+  if (m_hasBack)
+    painter->fillPath(core_path, QBrush(m_backColor));
 
   //画边框
-  auto stroke_path = cutCornerPath().subtracted(core_path);
-  painter->fillPath(stroke_path, QBrush(m_strokeColor));
+  if (m_hasStroke) {
+    auto stroke_path = cutCornerPath().subtracted(core_path);
+    painter->fillPath(stroke_path, QBrush(m_strokeColor));
+  }
 }
 
 bool BasicCutCornerBox::contains(const QPointF& p) const {

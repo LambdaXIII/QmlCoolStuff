@@ -10,5 +10,7 @@
         <file>Cool/Styles/CoolStyle.qml</file>
         <file>Cool/Styles/qmldir</file>
         <file>Cool/Components/DragMoveArea.qml</file>
+        <file>Cool/Controls/CoolAbstractButton.qml</file>
+        <file>Cool/Controls/CoolTextButton.qml</file>
     </qresource>
 </RCC>

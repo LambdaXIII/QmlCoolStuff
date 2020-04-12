@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 import Cool.Components 1.0
+import Cool.Styles 1.0
 
 Window {
   id: root
@@ -18,7 +19,7 @@ Window {
     anchors.margins: 5 + backgroundBox.strokeWidth
     horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignTop
-    color: "white"
+    color: CoolStyle.textColor
   }
 
   CutCornerBox {
@@ -26,7 +27,7 @@ Window {
     anchors.fill: parent
     z: -99
     strokeWidth: 2
-    cutSize: 40
+    cutSize: CoolStyle.windowCutSize
     DragMoveArea {
       anchors.fill: parent
       property bool canMove: true

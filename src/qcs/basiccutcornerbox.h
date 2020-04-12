@@ -16,6 +16,8 @@ class COOL_SHARED_EXPORT BasicCutCornerBox: public QQuickPaintedItem {
   COOL_WRITABLE_PROPERTY(qreal, cutSize)
   COOL_WRITABLE_PROPERTY(QColor, backColor)
   COOL_WRITABLE_PROPERTY(QColor, strokeColor)
+  COOL_WRITABLE_PROPERTY(bool, hasBack)
+  COOL_WRITABLE_PROPERTY(bool, hasStroke)
 
 public:
   explicit BasicCutCornerBox(QQuickItem* p = nullptr);
